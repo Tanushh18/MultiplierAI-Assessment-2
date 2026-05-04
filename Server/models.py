@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String, Text, ForeignKey
 from database import Base
 
 class User(Base):
@@ -13,5 +13,5 @@ class Link(Base):
 
     id = Column(Integer, primary_key=True)
     url = Column(String)
-    preview = Column(String)
+    preview = Column(Text)   # ← Capital T + added to import
     user_id = Column(Integer, ForeignKey("users.id"))
